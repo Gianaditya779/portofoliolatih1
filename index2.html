@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Industrial Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'industrial-dark': '#1B3C53',
+                        'industrial-blue': '#234C6A',
+                        'industrial-medium': '#456882',
+                        'industrial-light': '#E3E3E3'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .gradient-overlay {
+            background: linear-gradient(135deg, #1B3C53 0%, #234C6A 50%, #456882 100%);
+        }
+        
+        .hero-pattern {
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.03) 35px, rgba(255,255,255,.03) 70px);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(27, 60, 83, 0.3);
+        }
+        
+        .skill-bar {
+            transition: width 1.5s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .bolt-accent::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: linear-gradient(to bottom, #456882, #234C6A);
+        }
+    </style>
+</head>
+<body class="bg-industrial-light">
+    <!-- Navigation -->
+    <nav class="bg-industrial-dark shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-white">PORTFOLIO</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-industrial-light hover:text-white transition">Home</a>
+                    <a href="#about" class="text-industrial-light hover:text-white transition">About</a>
+                    <a href="#portfolio" class="text-industrial-light hover:text-white transition">Portfolio</a>
+                    <a href="#skills" class="text-industrial-light hover:text-white transition">Skills</a>
+                    <a href="#contact" class="text-industrial-light hover:text-white transition">Contact</a>
+                </div>
+                <button class="md:hidden text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-overlay hero-pattern pt-32 pb-20 min-h-screen flex items-center">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-white fade-in-up">
+                    <p class="text-industrial-light mb-4 text-lg">Welcome to my space</p>
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6">Creative Designer & Developer</h1>
+                    <p class="text-xl text-industrial-light mb-8 leading-relaxed">
+                        Crafting digital experiences with precision and industrial elegance. Building the future, one pixel at a time.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#portfolio" class="bg-white text-industrial-dark px-8 py-3 rounded-lg font-semibold hover:bg-industrial-light transition">View Work</a>
+                        <a href="#contact" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-industrial-dark transition">Get in Touch</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="w-full h-96 bg-industrial-blue rounded-2xl shadow-2xl flex items-center justify-center">
+                        <svg class="w-64 h-64 text-industrial-light opacity-50" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-industrial-dark mb-12 text-center">About Me</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-industrial-light p-8 rounded-lg card-hover">
+                        <div class="text-4xl mb-4">🎯</div>
+                        <h3 class="text-xl font-bold text-industrial-dark mb-3">Focused</h3>
+                        <p class="text-industrial-medium">Detail-oriented approach to every project with precision and care.</p>
+                    </div>
+                    <div class="bg-industrial-light p-8 rounded-lg card-hover">
+                        <div class="text-4xl mb-4">⚡</div>
+                        <h3 class="text-xl font-bold text-industrial-dark mb-3">Efficient</h3>
+                        <p class="text-industrial-medium">Streamlined workflows that deliver results without compromising quality.</p>
+                    </div>
+                    <div class="bg-industrial-light p-8 rounded-lg card-hover">
+                        <div class="text-4xl mb-4">🚀</div>
+                        <h3 class="text-xl font-bold text-industrial-dark mb-3">Innovative</h3>
+                        <p class="text-industrial-medium">Pushing boundaries with creative solutions and modern technologies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-industrial-light">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-industrial-dark mb-12 text-center">Featured Work</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-48 bg-industrial-blue"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-industrial-dark mb-2">Project Alpha</h3>
+                        <p class="text-industrial-medium mb-4">Industrial web application with modern UI/UX design principles.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-industrial-light text-industrial-dark px-3 py-1 rounded-full text-sm">React</span>
+                            <span class="bg-industrial-light text-industrial-dark px-3 py-1 rounded-full text-sm">Node.js</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-48 bg-industrial-medium"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-industrial-dark mb-2">Project Beta</h3>
+                        <p class="text-industrial-medium mb-4">E-commerce platform with seamless user experience and robust backend.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-industrial-light text-industrial-dark px-3 py-1 rounded-full text-sm">Vue.js</span>
+                            <span class="bg-industrial-light text-industrial-dark px-3 py-1 rounded-full text-sm">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-48 bg-industrial-dark"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-industrial-dark mb-2">Project Gamma</h3>
+                        <p class="text-industrial-medium mb-4">Mobile-first design system for enterprise-level applications.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-industrial-light text-industrial-dark px-3 py-1 rounded-full text-sm">Flutter</span>
+                            <span class="bg-industrial-light text-industrial-dark px-3 py-1 rounded-full text-sm">Firebase</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-industrial-dark mb-12 text-center">Skills & Expertise</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="mb-8">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-semibold text-industrial-dark">Web Development</span>
+                        <span class="text-industrial-medium">90%</span>
+                    </div>
+                    <div class="w-full bg-industrial-light rounded-full h-3">
+                        <div class="bg-gradient-to-r from-industrial-dark to-industrial-medium h-3 rounded-full skill-bar" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="mb-8">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-semibold text-industrial-dark">UI/UX Design</span>
+                        <span class="text-industrial-medium">85%</span>
+                    </div>
+                    <div class="w-full bg-industrial-light rounded-full h-3">
+                        <div class="bg-gradient-to-r from-industrial-dark to-industrial-medium h-3 rounded-full skill-bar" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="mb-8">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-semibold text-industrial-dark">Mobile Development</span>
+                        <span class="text-industrial-medium">80%</span>
+                    </div>
+                    <div class="w-full bg-industrial-light rounded-full h-3">
+                        <div class="bg-gradient-to-r from-industrial-dark to-industrial-medium h-3 rounded-full skill-bar" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="mb-8">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-semibold text-industrial-dark">Backend Development</span>
+                        <span class="text-industrial-medium">75%</span>
+                    </div>
+                    <div class="w-full bg-industrial-light rounded-full h-3">
+                        <div class="bg-gradient-to-r from-industrial-dark to-industrial-medium h-3 rounded-full skill-bar" style="width: 75%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-industrial-dark text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center">Get In Touch</h2>
+            <div class="max-w-2xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-industrial-blue p-6 rounded-lg">
+                        <h3 class="font-bold mb-2">📧 Email</h3>
+                        <p class="text-industrial-light">hello@portfolio.com</p>
+                    </div>
+                    <div class="bg-industrial-blue p-6 rounded-lg">
+                        <h3 class="font-bold mb-2">📱 Phone</h3>
+                        <p class="text-industrial-light">+62 xxx xxxx xxxx</p>
+                    </div>
+                </div>
+                <div class="bg-industrial-blue p-8 rounded-lg">
+                    <input type="text" placeholder="Your Name" class="w-full mb-4 p-3 rounded bg-industrial-medium text-white placeholder-industrial-light">
+                    <input type="email" placeholder="Your Email" class="w-full mb-4 p-3 rounded bg-industrial-medium text-white placeholder-industrial-light">
+                    <textarea placeholder="Your Message" rows="5" class="w-full mb-4 p-3 rounded bg-industrial-medium text-white placeholder-industrial-light"></textarea>
+                    <button class="w-full bg-white text-industrial-dark py-3 rounded-lg font-semibold hover:bg-industrial-light transition">Send Message</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-industrial-dark border-t border-industrial-blue py-8">
+        <div class="container mx-auto px-6 text-center text-industrial-light">
+            <p>&copy; 2024 Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Animate skill bars on scroll
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.skill-bar').forEach(bar => {
+                        bar.style.width = bar.style.width;
+                    });
+                }
+            });
+        }, observerOptions);
+
+        const skillsSection = document.querySelector('#skills');
+        if (skillsSection) observer.observe(skillsSection);
+    </script>
+</body>
+</html>
